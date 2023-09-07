@@ -1,13 +1,688 @@
+:root {
+  --primary-color: #495E57;
+  --primary-color2: #F4CE14;
+  --sec-darkpink: #EE9972;
+  --sec-lightpink: #FBDABB;
+  --sec-wall: #EDEFEE;
+  --sec-dark: #333333;
+}
+
 body {
-  margin: 0;
+  margin: 3rem 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
-code {
+/*code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}*/
+/*///////////////////////////////////////////////////////////
+                  font styles 
+//////////////////////////////////////////////////////////////*/
+.section-title {
+  font-family: 'karla';
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.subtitle {
+  font-family: 'Markazi Text';
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.paragraph {
+  font-family: 'karla';
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.highlight {
+  font-family: 'karla';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-title {
+  font-family: 'karla';
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.section-categories {
+  font-family: 'karla';
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.homepage {
+  font-family: 'karla';
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.display-title {
+  font-family: 'Markazi Text';
+  font-size: 64px;
+  font-weight: normal;
+}
+
+.btn {
+  width: 200px;
+  height: 60px;
+  background-color: #F4CE14;
+  border-radius: 16px;
+  border: 2px solid black;
+}
+.review-text{
+  font-family: 'karla';
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/*///////////////////////////////////////////////////////////
+                  header for desktop
+//////////////////////////////////////////////////////////////*/
+header {
+  padding: 0 10rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar .menuIcon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar .closeIcon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*///////////////////////////////////////////////////////////
+                  hero section for desktop
+//////////////////////////////////////////////////////////////*/
+.hero {
+  margin: 2rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 60vh;
+}
+
+.hero-content {
+  padding-left: 21vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.hero .display-title {
+  color: #F4CE14;
+  width: max-content;
+}
+
+.hero .subtitle {
+  margin-top: 0;
+  padding-top: 0;
+  color: white;
+  width: max-content;
+}
+
+.hero .intro {
+  width: 200px;
+  height: auto;
+  margin-top: 1rem;
+  color: white;
+}
+
+.hero button {
+  margin-left: 21vw;
+  margin-top: 2rem;
+}
+
+.hero img {
+  width: 20rem;
+  height: 25rem;
+  padding-left: 12.5vw;
+  margin-top: 3vw;
+}
+
+/*///////////////////////////////////////////////////////////
+                  weekly for desktop
+//////////////////////////////////////////////////////////////*/
+.weekly{
+  margin-left: 21vw;
+  margin-top: 8rem;
+  height: auto;
+  width:55%;
+}
+.card-place{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+#specials {
+  width: max-content;
+  margin-top: 2rem;
+}
+
+#weekly-header {
+  display: flex;
+}
+
+#online-menu {
+  margin-left: 32rem;
+}
+/*///////////////////////////////////////////////////////////
+                   card for desktop
+//////////////////////////////////////////////////////////////*/
+.card{
+  background-color: #EDEFEE;
+  width: 25rem;
+  height: 30rem;
+  margin:1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.card img{
+  border: 2px solid black;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.card h2:last-child{
+  color: #EE9972;
+}
+.card p:nth-last-child(2){
+  color: #495E57;
+  padding: 0 1rem;
+  margin: 0;
+}
+.card p:nth-last-child(1){
+  color: #495E57;
+  padding-left: 1rem;
+  margin-top: 2px;
+}
+#card-para{
+  height: 30%;
+}
+.card-heading{
+width: max-content;
+margin: 1rem;
+}
+.card-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*///////////////////////////////////////////////////////////
+                  testimonials for desktop
+//////////////////////////////////////////////////////////////*/
+.testimonials{
+  width: 100%;
+  height: 35rem;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials h1{
+  color: #F4CE14;
+  padding-top: 5%;
+}
+
+#rating{
+  margin-top: 4%;
+  width: 60%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+}
+.reviews{
+  background-color:var(--sec-darkpink);
+  width: 23%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+.reviews p{
+  padding-left: 7%;
+}
+.rewiews p:nth-last-child(1){
+  width: 100%;
+  height: 20%;
+}
+.user-pic{
+  width: 50%;
+  height:100%;
+  border: 1px solid black;
+}
+.user-pic > img{
+width: 100%;
+height: 100%;
+}
+.rating-profile{
+width:100%;
+height:40%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+}
+/*///////////////////////////////////////////////////////////
+                  about for desktop
+//////////////////////////////////////////////////////////////*/
+.about{
+  height: max-content;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.about p{
+  padding-left: 20vw;
+}
+.about p:nth-child(1){
+  margin-top: 5%;
+  margin-bottom: 0;
+  color: #F4CE14;
+}
+.about p:nth-child(2){
+  margin-top: 0;
+  padding-top: 0;
+  color: #495E57;
+}
+.about p:nth-child(3){
+ /* background-color: #F4CE14;*/
+ color: #333333;
+}
+.images{
+  width:70% ;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.owner-image2{
+  width: 19%;
+  height:45%;
+  margin-left:1%;
+  margin-top: 11%;
+  position: absolute;
+  background-image: url(images/Mario\ and\ Adrian\ A.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.owner-image1{
+  position: relative;
+  margin-left: 45%;
+  margin-top: 10%;
+  width: 30rem;
+  height:20rem;
+  background-image: url(images/Mario\ and\ Adrian\ b.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*///////////////////////////////////////////////////////////
+                   footer for desktop
+//////////////////////////////////////////////////////////////*/
+.footer{
+  width: 100%;
+  height: 60vh;
+  background-color: #EDEFEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer img{
+  margin-top: 0;
+}
+.footer div{
+  height: 80%;
+  display: flexbox;
+  flex-direction: row;
+  align-items: center;
+}
+.footer-content{
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.footer-content h6{
+  color: #495E57;
+}
+.footer ul{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  color: var(--sec-darkpink);
+}
+/*///////////////////////////////////////////////////////////
+                   for medium screens
+//////////////////////////////////////////////////////////////*/
+@media(max-width:62rem) {
+  body {
+    margin: 2rem 1rem;
+  }
+
+  header {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar .closeIcon {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbar .navList {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    height: 60vh;
+    padding: 2rem 0;
+    display: none;
+    flex-direction: column;
+    background-color: brown;
+  }
+
+  .active .navList {
+    display: flex;
+  }
+
+  .active .navbar .menuIcon {
+    display: none;
+  }
+
+  .active .closeIcon {
+    display: block;
+  }
+
+  .navbar ul li {
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: antiquewhite;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar img {
+    width: 10rem;
+    padding-left: 1rem;
+  }
+
+  .navbar .menuIcon {
+    display: block;
+    padding-right: 1rem;
+    font-size: 3rem;
+    border: 4px solid black;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero .hero-content {
+    padding-left: 2vw;
+  }
+
+  .hero .btn {
+    margin-left: 2vw;
+  }
+
+  .hero .hero-image {
+    height: fit-content;
+    max-height: 25rem;
+    width: fit-content;
+    max-width: 35vw;
+    margin-top: 10vh;
+  }
+  .weekly{
+    width: 90%;
+    margin-left: 2vw;
+    margin-top: 8rem;
+  }
+  #online-menu {
+    margin: 0;
+  }
+
+  #weekly-header {
+    justify-content: space-between;
+  }
+  .card-place{
+overflow-x: scroll;
+overflow-y: hidden;
+  }
+  #rating{
+    width: 80%;
+    height: 35%;
+  }
+  .testimonials{
+    margin-top: 3rem;
+  }
+  #rating{
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .reviews{
+    padding-top: 0;
+    margin-top: 0;
+    width: 50%;
+    max-width:15rem ;
+    height: 11rem;
+  }
+  .testimonials h1{
+    padding-top: 2px;
+    margin-top: 4px;
+  }
+  .about{
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    margin-right: 0;
+  }
+  .about p{
+    padding-left: 0;
+    height: auto;
+  }
+  .about p:nth-child(3){
+    font-size: 16px;
+    margin-top: 32%;
+  }
+  .about .images{
+    position: absolute;
+    right: 3em;
+    top: 4em;
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 5rem;
+    height: 40vh;
+   }
+   .owner-image2{
+    width: 40%;
+    height: 70%;
+    margin-top: 26%;
+    margin-left: 10%;
+  }
+  .owner-image1{
+    width: 40%;
+    height: 75%;
+    margin-left: 35%;
+    position: relative;
+  }
+  .footer-content{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 9px;
+    margin: 0 9px;
+    width:90% ;
+  }
+  .footer-content div{
+    margin: 0 9px;
+  }
+  .footer-content ul{
+    font-size: 14px;
+  }
+
+}
+
+/*///////////////////////////////////////////////////////////
+                  for tablets and phone
+//////////////////////////////////////////////////////////////*/
+@media (max-width:600px) {
+  .hero .hero-image {
+    width: 35vw;
+    max-width: 35vw;
+    height: fit-content;
+    padding-left: 0;
+    margin-top: 10rem;
+  }
+  .weekly{
+    margin-left: 3vw;
+    margin-top: 5rem;
+   
+  }
+  #online-menu {
+    margin: 0;
+  }
+
+  #weekly-header {
+    justify-content: space-between;
+  }
+  .card-place{
+    padding-left: 0;
+  }
+  .testimonials{
+    margin-top: 3rem;
+  }
+  .testimonials h1{
+    padding-top: 2px;
+    margin-top: 0;
+  }
+  #rating{
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .reviews{
+    padding-top: 0;
+    margin-top: 0;
+    width: 60%;
+    height: 11rem;
+  }
+  .owner-image2{
+    width: 10rem;
+    height: 08rem;
+    margin-top: 6rem;
+    margin-left: 4rem;
+  }
+  .owner-image1{
+    width: 10rem;
+    height: 08rem;
+    margin-left: 9rem;
+    position: relative;
+  }
+  .about{
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+  .about .images{
+   position: absolute;
+   right: 2em;
+   top: 4em;
+   margin-top: 0;
+   padding-top: 0;
+   margin-left: 5rem;
+   height: 40vh;
+  }
+  .about p{
+    padding-left: 1rem;
+    max-width: fit-content;
+  }
+  .about p:nth-child(3){
+    font-size: 16px;
+    margin-top: 10rem;
+  }
+  .footer-content h6{
+    font-size: 15px;
+  }
+  .footer-content ul{
+    font-size: 12px;
+  }
+  .footer-content{
+    margin-left: 0;
+    padding-left: 0;
+    width: 60%;
+   }
+.footer{
+  display: flex;
+  padding-left: 0px;
+  margin-left: 2px;
+  justify-content:flex-end;  
+  position: relative;
+}
+.footer-content >img{
+  position: absolute;
+  left: 1em;
+  top: 3em;
+}
+.footer-content div{
+margin: 2px 9px;
+padding: 0;
+}
 }

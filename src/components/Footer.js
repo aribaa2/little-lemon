@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../images/footer-logo.png'
 function Footer() {
     return (
-        <Footer className='footer'>
+        <div className='footer'>
             <div className='footer-content'>
                 <img src={logo} alt='logo'></img>
                 <div className='navigation'>
@@ -32,7 +32,7 @@ function Footer() {
                     </ul>
                 </div>
             </div>
-        </Footer>
+        </div>
     )
 }
 export default Footer;

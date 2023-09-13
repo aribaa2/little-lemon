@@ -1,21 +1,25 @@
-import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Weekly from './components/Weekly';
-import Testimonials from './components/Testimonials';
-import About from './components/About';
-import Footer from './components/Footer';
+
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Homepage from './components/Homepage';
+import Signup from './components/Signup'
+import { OrderCard } from './components/OrderCard';
+import { OrderOnline } from './components/OrderOnline';
+import { TableReserveForm } from './components/TableReserveForm';
+import { Reservations } from './components/Reservations';
 
 function App() {
   return (
     <>
-   <Header/>
-   <Hero/>
-   <Weekly/>
-   <Testimonials/>
-   <About/>
-   <Footer/>
-   </>
+      <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage/>}/>
+        <Route path='/home'element={<Homepage/>} />
+        <Route path='/signup'element={<Signup/>} />
+        <Route path='/order'element={<OrderOnline/>} />
+        <Route path='/table'element={<TableReserveForm/>} />
+      </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

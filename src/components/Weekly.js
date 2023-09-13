@@ -3,6 +3,7 @@ import Card from './Card';
 import bruchetta from '../images/Bruschetta-recipe-with-mozzarella-2.jpg'
 import greekSalad from '../images/greek salad.jpg'
 import lemonDessert from '../images/lemon dessert.jpg'
+import { Link } from 'react-router-dom';
 function Weekly() {
     const dishes=[
         {   src: greekSalad,
@@ -20,13 +21,12 @@ function Weekly() {
             price: '$5.00',
             description:"This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
         }
-        
     ]
     return (
         <div className='weekly'> 
             <div id='weekly-header'>
                 <h6 id='specials' className='section-categories'>Specials</h6>
-                <button id='online-menu' className='btn'>Online Menu</button>
+              <Link to='/order'><button id='online-menu' className='btn'>Online Menu</button></Link>
             </div>
             <div className='card-place'>
                 {dishes.map((dish) => (

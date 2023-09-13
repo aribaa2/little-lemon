@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { TableReserveForm } from './components/TableReserveForm';
+import { OrderOnline } from './components/OrderOnline';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders TableReserve Form', () => {
+  render(<OrderOnline />);
+  const BookingElement = screen.getByText("Order Food Online");
+  expect(BookingElement).toBeInTheDocument();
 });

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-export const TableReserveForm = ({times}) => {
+export const TableReserveForm = (props) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [contactNo, setContactNo] = useState('')
@@ -13,7 +13,14 @@ export const TableReserveForm = ({times}) => {
   const [location, setLocation] = useState('indoor')
   const [event, setEvent] = useState('casual')
 
-  function handleClick(e) {
+  const[times,setTimes]=useState(props.availableTimes.availableTimes)
+
+function handleChange(e){
+setDate(e.target.value)
+props.dispatch(e)
+}
+
+  function handleSubmit(e) {
     e.preventDefault();
    if((firstName==='' || lastName==='' || contactNo==='') &&
    (date==='' || time==='' || guest==='' || event==='')
@@ -22,14 +29,17 @@ export const TableReserveForm = ({times}) => {
       else{
        alert('Thank you for reserving a table! You will shortly receive a confirmation message on your provided phone no.')
       }
+      props.SubmitForm(e)
   }
+useEffect(() => {
+  console.log(times)})
 
 
 
   return (
     <>
       <Header />
-      <form className='table-form'>
+      <form className='table-form' onSubmit={handleSubmit}>
         <h1 className='display-title'>Table Reservation Form</h1>
         <p className='paragraph'>Instructions: Please fill out all the fields with correct information.</p>
         <h2 className='subtitle'>Customer Details:</h2>
@@ -47,7 +57,7 @@ export const TableReserveForm = ({times}) => {
             placeholder='last name' /></div>
           <div>
             <label htmlFor='contactno' className='card-title'>Contact No *</label>
-            <input type='tel' required name='contactno' 
+            <input type='tel' required name='contactno'
             onChange={(e)=>setContactNo(e.target.value)}
             placeholder='your phone number' /></div>
           <div>
@@ -61,18 +71,18 @@ export const TableReserveForm = ({times}) => {
             <div>
               <label htmlFor="res-date" className='card-title'>Choose date*</label>
               <input type="date" id="res-date"
-              onChange={(e)=>{setDate(e.target.value)
-              }
-            }
+              onChange={handleChange}
               /></div>
             <div>
               <label htmlFor="res-time" className='card-title'>Choose time *</label>
               <select id="res-time " className='select'
               onChange={(e)=>setTime(e.target.value)}
               >
-                {(Array.isArray(times))?times.map((index) => (
-                    <option>{index}</option>
-                  )):null}
+                {
+                  props.availableTimes.availableTimes.map(availableTime =>{
+                    return <option>{availableTime}</option>
+                  })
+                }
               </select>
             </div>
             <div>
@@ -105,7 +115,7 @@ export const TableReserveForm = ({times}) => {
               <input type='text' placeholder='Any instructons for staff' name='instructions' />
             </div>
           </div>
-          <button className='btn' type='submit' onClick={handleClick}>Reserve Now</button>
+          <button className='btn' type='submit'>Reserve Now</button>
         </form>
         <Footer />
       </>

@@ -138,7 +138,7 @@ header {
   grid-template-columns: 1fr 2fr;
   background-color: var(--primary-color);
   width: 100%;
-  height: 60vh;
+  height: 64vh;
   padding: 0;
 }
 .hero div:nth-child(1){
@@ -174,14 +174,14 @@ header {
 
 .hero button {
   margin-left: 21vw;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .hero-image {
   width: 20rem;
   height: 25rem;
-  padding-left: 12.5vw;
-  margin-top: 18vh;
+  padding-left: 12vw;
+  margin-top: 15vh;
 }
 
 /*///////////////////////////////////////////////////////////
@@ -321,7 +321,7 @@ align-items: center;
   margin: 5rem;
 }
 .about p{
-  padding-left: 20vw;
+  padding-left: 5vw;
 }
 .about p:nth-child(1){
   margin-top: 5%;
@@ -347,7 +347,7 @@ align-items: center;
   width: 19%;
   height:45%;
   margin-left:6%;
-  margin-top: 11%;
+  margin-top: 15%;
   position: absolute;
   background-image: url(images/Mario\ and\ Adrian\ A.jpg);
   background-repeat: no-repeat;
@@ -702,7 +702,10 @@ color: #F4CE14;
   width: 50%;
   height: 15vh;
 }
-
+#confirmation{
+  margin: 5% 20%;
+  color: #333333;
+}
 
 
 
@@ -1008,9 +1011,11 @@ overflow-y: hidden;
 @media (max-width:600px) {
   .hero .hero-image {
     width: 35vw;
-    max-width: 15vw;
+    max-width: 25vw;
     height: fit-content;
     padding-left: 0;
+    padding-top: 20vh;
+
   }
   .weekly{
     margin-left: 3vw;
@@ -1051,13 +1056,13 @@ overflow-y: hidden;
   .owner-image2{
     width: 10rem;
     height: 08rem;
-    margin-top: 6rem;
-    margin-left: 4rem;
+    margin-top: 8rem;
+    margin-left: 1rem;
   }
   .owner-image1{
     width: 10rem;
-    height: 08rem;
-    margin-left: 9rem;
+    height: 10rem;
+    margin-left: 7rem;
     position: relative;
   }
   .about{
@@ -1075,7 +1080,7 @@ overflow-y: hidden;
    height: 40vh;
   }
   .about p{
-    padding-left: 1rem;
+    padding-left: 0rem;
     max-width: fit-content;
   }
   .about p:nth-child(3){

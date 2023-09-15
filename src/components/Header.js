@@ -18,7 +18,7 @@ function Header() {
                 <img src={logo} alt="logo"></img>
                 <ul className='navList section-title'>
                   <Link to='/home' className='text-link'><li>Home</li></Link> 
-                   <Link to='/#about' className='text-link'><li>About</li></Link> 
+                   <a href='#about' className='text-link'><li>About</li></a> 
                    <Link to='/order' className='text-link'><li>Menu</li></Link>
                    <Link to='/table' className='text-link'> <li>Reservations</li></Link>
                    <Link to='/order' className='text-link'><li>Order Online</li></Link>
